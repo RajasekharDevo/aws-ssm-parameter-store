@@ -12,5 +12,9 @@ parameters = [
   { name = "dev.user.mongo_url", value = "mongodb://mongodb-dev.rajasekhar72.store:27017/users" },
   { name = "dev.cart.redis_host", value = "redis-dev.rajasekhar72.store" },
   { name = "dev.cart.catalogue_host", value = "catalogue-dev.rajasekhar72.store" },
-  { name = "dev.cart.catalogue_port", value = "8080" }
+  { name = "dev.cart.catalogue_port", value = "8080" },
+  { name = "dev.shipping.cart_endpoint", value = "cart-dev.rajasekhar72.store:8080" },
+  { name = "dev.shipping.db_host", value = "mysql-dev.rajasekhar72.store" },
+  { name = "dev.shipping.db_user", value = "root" },
+  { name = "dev.shipping.db_pass", value = "RoboShop@1" }
 ]
