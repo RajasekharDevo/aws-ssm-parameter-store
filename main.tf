@@ -4,7 +4,11 @@ resource "aws_ssm_parameter" "parameters" {
   value = var.parameters [count.index].value
   type = "String"
   key_id= "23fbbd89-e1ad-4fe9-97d2-238a2f996ef9"
-  overwrite = true
+
+  lifecycle {
+    create_before_destroy = true  # Ensures the parameter is created before the old one is destroyed
+  }
+
 }
 
 ##Passwords are not at all meant to keep inside the code at all, Here since it is a lab we are doing it to save the time.
@@ -14,5 +18,9 @@ resource "aws_ssm_parameter" "passwords" {
   value = var.passwords [count.index].value
   type = "SecureString"
   key_id= "23fbbd89-e1ad-4fe9-97d2-238a2f996ef9"
-  overwrite = true
+
+  lifecycle {
+    create_before_destroy = true  # Ensures the parameter is created before the old one is destroyed
+  }
+
 }
